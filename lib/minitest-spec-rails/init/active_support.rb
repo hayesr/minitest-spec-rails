@@ -5,7 +5,6 @@ module MiniTestSpecRails
       extend ActiveSupport::Concern
 
       included do
-        singleton_class.class_eval { remove_method :describe }
         extend MiniTest::Spec::DSL
         include MiniTestSpecRails::DSL
         register_spec_type(self) { |desc| Class === desc }
